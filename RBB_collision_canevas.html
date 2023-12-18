@@ -50,7 +50,8 @@ border:1px solid #e5e5e5;
     function collisionLeftBorder(circle){
     /*******************
      * PARTIE A ECRIRE */
-      return false;
+      res = circle.x - circle.radius <= 0;
+      return res;
     /*******************/
     }
 
@@ -58,7 +59,8 @@ border:1px solid #e5e5e5;
     function collisionRightBorder(circle){
     /*******************
      * PARTIE A ECRIRE */
-      return false;
+      res = circle.x + circle.radius > main_window.width;
+      return res;
     /*******************/
     }
     
@@ -66,7 +68,8 @@ border:1px solid #e5e5e5;
     function collisionTopBorder(circle){
     /*******************
      * PARTIE A ECRIRE */
-      return false;
+      res = circle.y - circle.radius <= 0;
+      return res;
     /*******************/
     }
 
@@ -74,7 +77,7 @@ border:1px solid #e5e5e5;
     function collisionBottomBorder(circle){
     /*******************
      * PARTIE A ECRIRE */
-      return false;
+      return circle.y +circle.raduis>main_window.height ;
     /*******************/
     }
 
@@ -97,7 +100,8 @@ border:1px solid #e5e5e5;
     function collisionCircles(c1,c2){
     /*******************
      * PARTIE A ECRIRE */
-      return false;
+      res = Math.pow(c1.x-c2.x,2)+Math.pow(c1.y-c2.y,2) < Math.pow(c1.radius+c2.radius,2)
+      return res;
     /*******************/
     }
 
@@ -126,6 +130,7 @@ border:1px solid #e5e5e5;
     function collisionCircleBox(circle,box){
     /*******************
      * PARTIE A ECRIRE */
+      if (circle.x + circle.radius > box.x) return true;
       return false;
     /*******************/
     }
